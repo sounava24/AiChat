@@ -5,7 +5,6 @@ import {
 } from "@google/generative-ai";
 
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-
 if (!apiKey) {
   throw new Error("API key is missing! Check your .env file.");
 }
@@ -41,5 +40,5 @@ async function createAskAi() {
   return AskAi;
 }
 
-const AskAiPromise = createAskAi();
-export default AskAiPromise;
+const AskAi = createAskAi();
+export default AskAi;

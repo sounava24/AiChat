@@ -21,7 +21,8 @@ function App() {
     setInput('');
     setLoading(true);
 
-    const response = await AskAi(input);
+    const Ask = await AskAi;
+    const response = await Ask(input);
     setLoading(false);
     const aiMessage = { text: response, sender: 'ai' };
     setMessages((prev) => [...prev, aiMessage]);
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white p-4">
+      <h1 className='text-4xl font-extrabold font-serif text-red-200'>AI ASSISTANT</h1>
       <div className="w-full max-w-lg bg-gray-800 shadow-2xl rounded-xl p-4 flex flex-col h-[80vh] border border-gray-700">
         <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-3 flex flex-col space-y-3 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
           {messages.map((msg, index) => (
